@@ -1,0 +1,25 @@
+body {
+  background-color: green;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  background-image: url("LOTR.JPEG");
+  background-size: cover;
+}
+
+#text {
+  font-family: fantasy;
+}
+
+#titlebox {
+  background-color: rgba(255, 255, 255, 0.365);
+  align-self: center;
+  padding: 3px;
+  display: inline-block;
+}
+
+h1 {
+  color: green;
+  font-size: 60px;
+  font-family: fantasy;
+}
