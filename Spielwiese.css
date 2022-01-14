@@ -5,6 +5,7 @@ body {
   text-align: center;
   background-image: url("LOTR.JPEG");
   background-size: cover;
+  font-family: fantasy;
 }
 
 #text {
@@ -26,4 +27,12 @@ h1 {
 
 .hidden {
   display: none;
+}
+
+#code {
+  font-size: large;
+}
+
+#codelabel {
+  font-size: 60px;
 }
