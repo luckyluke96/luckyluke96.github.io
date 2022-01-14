@@ -23,3 +23,7 @@ h1 {
   font-size: 60px;
   font-family: fantasy;
 }
+
+.hidden {
+  display: none;
+}
