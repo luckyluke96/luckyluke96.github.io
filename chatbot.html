@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,14 +24,54 @@
             }
         }
     </style>
+<script>
+    // JavaScript-Funktion zum Generieren eines zufälligen Hash-Werts
+    function generateRandomHash() {
+        var hashLength = 10; // Legen Sie die Länge des Hash-Werts fest
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var hash = '';
+
+        for (var i = 0; i < hashLength; i++) {
+            var charIndex = Math.floor(Math.random() * characters.length);
+            hash += characters.charAt(charIndex);
+        }
+
+        return hash;
+    }
+
+    // JavaScript-Funktion zum Aktualisieren der URL mit dem generierten Hash
+    function updateURL() {
+        var hash = generateRandomHash();
+        var currentURL = window.location.href;
+
+        // Entfernen Sie vorhandene hash-Parameter aus der URL
+        currentURL = currentURL.replace(/[\?&]hash=[^&#]*/g, '');
+
+        // Überprüfen, ob die URL bereits Parameter enthält
+        var separator = currentURL.indexOf('?') !== -1 ? '&' : '?';
+
+        var newURL = currentURL + separator + 'hash=' + hash;
+        window.history.replaceState({}, document.title, newURL);
+    }
+
+    // Diese Funktion wird aufgerufen, wenn die Seite geladen wird
+    window.onload = function () {
+        updateURL();
+    };
+</script>
+
+
+
+
 </head>
+
 <body>
 
     <header>
         <img src="assets/UHH-logo.png" alt="UHH" class="logo">
         <h1>Interaction with Chatbots</h1>
         <img src="assets/UDS-logo.png" alt="UDS" class="logo">
-        
+
     </header>
 
     <main>
@@ -38,28 +79,37 @@
 
         <div style="height:20px;"></div>
 
-        <p>“In the middle of a busy week, you came across a tempting offer from AdventureEssentials, an up-and-coming outdoor gear store. You were drawn to a backpack in a vibrant azure blue and quickly ordered it, excited about using it on your upcoming outdoor trips.
-        On the delivery day, you eagerly opened the box, only to find a bright red backpack instead of the blue one you expected. You double-checked the details and confirmed the color mismatch.
+        <p>“In the middle of a busy week, you came across a tempting offer from AdventureEssentials, an up-and-coming
+            outdoor gear store. You were drawn to a backpack in a vibrant azure blue and quickly ordered it, excited
+            about using it on your upcoming outdoor trips.
+            On the delivery day, you eagerly opened the box, only to find a bright red backpack instead of the blue one
+            you expected. You double-checked the details and confirmed the color mismatch.
 
-        To sort things out, you reached out to AdventureEssentials' customer support. On their customer support website, they directed you to use their chatbot, through which you can place your cancellation request. Since you are a well-prepared customer, you know that your order number is 24122024”
+            To sort things out, you reached out to AdventureEssentials' customer support. On their customer support
+            website, they directed you to use their chatbot, through which you can place your cancellation request.
+            Since you are a well-prepared customer, you know that your order number is 24122024”
 
-        Please use the chatbot above to cancel your order.
+            Please use the chatbot above to cancel your order.
         </p>
 
         <div style="height:20px;"></div>
-      
 
-        <iframe src='https://webchat.botframework.com/embed/age-bot-with-insights?s=RpCoWqLGf4U.XZh6CvLgMFmndpfyvawmmo0RGoNxXtXy1MMcfo_VHZ8'></iframe>
+
+        <iframe
+            src='https://webchat.botframework.com/embed/age-bot-with-insights?s=RpCoWqLGf4U.XZh6CvLgMFmndpfyvawmmo0RGoNxXtXy1MMcfo_VHZ8'></iframe>
 
 
         <div style="height:50px;"></div>
 
         <div>
-            <button onclick="window.location.href='https://studentische-umfragen.uni-hamburg.de/index.php/297193?newtest=Y&lang=en'" >I finished the interaction with the chatbot and want to continue to the questionnaire.</button>
+            <button
+                onclick="window.location.href='https://studentische-umfragen.uni-hamburg.de/index.php/297193?newtest=Y&lang=en'">I
+                finished the interaction with the chatbot and want to continue to the questionnaire.</button>
         </div>
     </main>
 
-    
+
 
 </body>
+
 </html>
